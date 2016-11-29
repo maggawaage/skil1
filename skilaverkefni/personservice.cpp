@@ -1,6 +1,6 @@
-#include "performerservice.h"
+#include "personservice.h"
 
-PerformerService::PerformerService()
+PersonService::PersonService()
 {
 
 }
@@ -17,5 +17,12 @@ vector<Performer> getPerformers()
      //odruvisi hja okkur
     //TODO fullt stuff
     return performers;
+}
+*/
+/*
+vector<Person> PersonService::alpha()
+{
+    vector<Person> personSorted = person;
+    sort(perform)
 }
 */

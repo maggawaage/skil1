@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include "consoleui.h"
-#include "performer.h"
+#include "person.h"
 
 using namespace std;
 
@@ -11,14 +11,16 @@ ConsoleUI::ConsoleUI()
 }
 void ConsoleUI::run()
 {
+    //fall sem les úr vektor og skrifar út
     /*
+    //string commmand;
+    //cin >> command;
+    while(true){
+
     cout << "Please enter one of the following commands: " << endl;
     cout << "list - This will list all performers in the system" << endl;
     cout << "add - This will add a new performer" << endl;
-
-    //string commmand;
-    //cin >> command;
-
+    cout << "sort - This will sort the list" << endl;
     //if(command == "list")
     {
        vector<Performer> performers = _service.getPerformers();
@@ -32,4 +34,5 @@ void ConsoleUI::run()
         //TODO
     }
     */
+   // }
 }

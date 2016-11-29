@@ -1,6 +1,6 @@
 #ifndef CONSOLEUI_H
 #define CONSOLEUI_H
-#include "performerservice.h"
+#include "personservice.h"
 
 class ConsoleUI
 {
@@ -10,7 +10,7 @@ public:
     void run();
 
 private:
-    PerformerService _service;
+    PersonService _service;
 };
 
 #endif // CONSOLEUI_H
