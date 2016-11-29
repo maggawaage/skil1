@@ -9,4 +9,14 @@ CONFIG -= app_bundle
 
 TEMPLATE = app
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    consoleui.cpp \
+    performerservice.cpp \
+    performer.cpp \
+    dataaccess.cpp
+
+HEADERS += \
+    consoleui.h \
+    performerservice.h \
+    performer.h \
+    dataaccess.h
