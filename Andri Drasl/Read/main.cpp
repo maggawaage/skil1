@@ -1,35 +1,44 @@
 #include <iostream>
 #include <fstream>
-#include <sstream>
 #include <vector>
 #include <string>
 
 using namespace std;
 
-int main() {
+class Person
+{
+public:
+    string name;
+    char gender;
+    int birthYear;
+    int deathYear;
+};
 
-    vector<double> Main;
-    int count;
-    string lineData;
-    double tmp;
+int main()
+{
+    vector<Person>  famusComputerphiles;
 
-    ifstream myfile ("myfile.txt", ios::in);
+    fstream inputFile;
+    inputFile.open("myfile.txt"); // breyta nafni á skrá
 
-    double number;
-
-    myfile >> count;
-    for(int i = 0; i < count; i++) {
-        myfile >> tmp;
-        Main.push_back(tmp);
-        cout << count;
+    if (inputFile.is_open())
+    {
+        while(! inputFile.eof() )
+        {
+            Person temp;
+            inputFile >> temp.name;
+            inputFile >> temp.gender;
+            inputFile >> temp.birthYear;
+            inputFile >> temp.deathYear;
+            famusComputerphiles.push_back(temp);
+        }
     }
+    inputFile.close();
 
-    cout << "Numbers:\n";
-    cout << Main.size();
-    for (int i=0; i=((Main.size())-1); i++) {
-        cout << Main[i] << '\n';
-    }
+    cout << famusComputerphiles.at(0).name << endl;
+    cout << famusComputerphiles.at(0).gender<< endl;
+    cout << famusComputerphiles.at(0).birthYear<< endl;
+    cout << famusComputerphiles.at(0).deathYear<< endl;
 
-    cin.get();
     return 0;
 }
