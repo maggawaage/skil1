@@ -1,31 +1,37 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include "consoleui.h"
 
 using namespace std ;
 
 int main()
 {
-int choice;
-char ch;
+    ConsoleUI ui;
 
-do{
-cout<<endl;
-cout<<"Please choose from the following: \n";
-cout<<"\t1. Write Data.  \n";
-cout<<"\t2. Read Data. \n";
-cout<<"\t3. Quit. \n";
-cout<<endl;
-cout<<"Your choice: ";
-cin>>choice;
+    ui.run();
+    //Þetta á að vera það eina í main
+
+    int choice;
+    char ch;
+
+    do{
+    cout<<endl;
+    cout<<"Please choose from the following: \n";
+    cout<<"\t1. Write Data.  \n";
+    cout<<"\t2. Read Data. \n";
+    cout<<"\t3. Quit. \n";
+    cout<<endl;
+    cout<<"Your choice: ";
+    cin>>choice;
 
 switch(choice)
 {
     case 1:
-        write();
+       // write();
         break;
     case 2:
-        read();
+        //read();
         break;
     case 3:
 
