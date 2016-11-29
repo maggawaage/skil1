@@ -6,6 +6,9 @@ class DataAccess
 {
 public:
     DataAccess();
+
+private:
+    //vector<//private vector
 };
 
 #endif // DATAACCESS_H
