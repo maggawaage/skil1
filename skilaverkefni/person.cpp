@@ -4,28 +4,44 @@ Person::Person()
 {
 
 }
-Person::Person(string name, int year, char gender, int death)
+Person::Person(string name, int birthYear, char gender, int deathYear)
 {
    _name = name;
-   _year = year;
+   _birthYear = birthYear;
    _gender = gender;
-   _death = death;
+   _deathYear = deathYear;
 }
 string Person::getName() const
 {
     return _name;
 }
-int Person::getYear() const
-{
-    return _year;
-}
 char Person::getGender() const
 {
     return _gender;
 }
-int Person::getDeath() const
+int Person::getbirthYear() const
 {
-    return _death;
+    return _birthYear;
+}
+int Person::getdeathYear() const
+{
+    return _deathYear;
+}
+void Person::setName(string name)
+{
+    _name=name;
+}
+void Person::setGender(char gender)
+{
+    _gender=gender;
+}
+void Person::setBirthYear(int birthYear)
+{
+    _birthYear=birthYear;
+}
+void Person::setDeathYear(int deathYear)
+{
+     _deathYear=deathYear;
 }
 int Person::compareName(Person a, Person b)
 {
@@ -37,11 +53,11 @@ int Person::compareNameReversed(Person a, Person b)
 }
 int Person::compareYear(Person a, Person b)
 {
-    return a._year < b._year;
+    return a._birthYear < b._birthYear;
 }
 int Person::compareYearReversed(Person a, Person b)
 {
-    return a._year > b._year;
+    return a._birthYear > b._birthYear;
 }
 char Person::compareGender(Person a, Person b)
 {
@@ -53,9 +69,9 @@ char Person::compareGenderReversed(Person a, Person b)
 }
 int Person::compareDeath(Person a, Person b)
 {
-    return a._death < b._death;
+    return a._deathYear < b._deathYear;
 }
 int Person::compareDeathReversed(Person a, Person b)
 {
-    return a._death > b._death;
+    return a._deathYear > b._deathYear;
 }
