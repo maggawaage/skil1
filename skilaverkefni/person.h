@@ -8,12 +8,16 @@ class Person
 {
 public:
     Person();
-    Person(string name, int age, char gender, int death);
+    Person(string name, char gender, int birthYear, int deathYear);
 
     string getName() const;
-    int getYear() const;
     char getGender() const;
-    int getDeath() const;
+    int getbirthYear() const;
+    int getdeathYear() const;
+    void setName(string name);
+    void setGender(char gender);
+    void setBirthYear(int birthYear);
+    void setDeathYear(int deathYear);
 
     static int compareName(Person a, Person b);
     static int compareNameReversed(Person a, Person b);
@@ -24,11 +28,17 @@ public:
     static int compareDeath(Person a, Person b);
     static int compareDeathReversed(Person a, Person b);
 
+    static vector<Person> SearchName(vector <Person> list, string name);
+    static vector<Person> SearchGender(vector <Person> list, char gender);
+    static vector<Person> SearchBirthYear(vector <Person> list, int birthYear);
+    static vector<Person> SearchDeathYear(vector <Person> list, int deathYear);
+
+
 private:
     string _name;
-    int _year;
+    int _birthYear;
     char _gender;
-    int _death;
+    int _deathYear;
 };
 
 #endif // PERSON_H
