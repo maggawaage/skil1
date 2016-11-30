@@ -35,4 +35,38 @@ void ConsoleUI::run()
     }
     */
    // }
+    int choice;
+    char ch;
+
+    do
+    {
+    cout << endl;
+    cout << "Please choose from the following commands: \n";
+    cout << "\t1. Add person.  \n";
+    cout << "\t2. Read Data. \n";
+    cout << "\t3. Sort Data. \n";
+    cout << "\t4. Quit. \n";
+    cout << endl;
+    cout << "Your choice: ";
+    cin >> choice;
+
+    switch(choice)
+    {
+        case 1:
+        // write();
+            break;
+        case 2:
+            //read();
+            break;
+        case 3:
+
+            break;
+        default:
+            cout<<"\tInvalid entry!"<<endl;
+    }
+    cout<<"\nTry again (y/n): ";
+    cin>>ch;
+
+    }
+    while(ch == 'y' || ch == 'Y');
 }

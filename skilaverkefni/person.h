@@ -21,8 +21,8 @@ public:
     static int compareYearReversed(Person a, Person b);
     char compareGender(Person a, Person b);
     char compareGenderReversed(Person a, Person b);
-    int compareDeath(Person a, Person b);
-    int compareDeathReversed(Person a, Person b);
+    static int compareDeath(Person a, Person b);
+    static int compareDeathReversed(Person a, Person b);
 
 private:
     string _name;

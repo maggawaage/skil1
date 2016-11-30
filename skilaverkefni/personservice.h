@@ -10,7 +10,7 @@ class PersonService
 public:
     PersonService();
 
-    vector<Person> getPerformers(/*Todo parameters*/);
+    //vector<Person> getPerformers(/*Todo parameters*/);
 };
 
 #endif // PERSONRSERVICE_H

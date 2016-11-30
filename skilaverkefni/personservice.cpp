@@ -20,9 +20,10 @@ vector<Performer> getPerformers()
 }
 */
 /*
-vector<Person> PersonService::alpha()
+vector<Person> PersonService::alpha(vector<Person> whatever)
 {
-    vector<Person> personSorted = person;
-    sort(perform)
+    vector<Person> sortedPersons = vector<Person> whatever;
+    sort(sortedPersons.begin(), sortedPersons.end(), Person::compareName);
+    return sortedPersons;
 }
 */
