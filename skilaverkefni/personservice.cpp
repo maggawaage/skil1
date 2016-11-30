@@ -30,3 +30,34 @@ vector<Person> PersonService::realpha()
     sort(sortedPersons.begin(), sortedPersons.end(), Person::compareNameReversed);
     return sortedPersons;
 }
+vector<Person> PersonService::year()
+{
+    sort(sortedPersons.begin(), soretdPersons.end(), Person::compareYear);
+    return sortedPersons;
+}
+vector<Person> PersonService::reyear()
+{
+    sort(sortedPersons.begin(), sortedPersons.end(), Person::compareYearReversed);
+    return sortedPersons;
+}
+vector<Person> PersonService::gender()
+{
+    sort(sortedPersons.begin(), sortedPersons.end(), Person::compareGenderReversed);
+    return sortedPersons;
+}
+vector<Person> PersonService::regender()
+{
+    sort(sortedPersons.begin(), sortedPersons.end(), Person::compareGenderReversed);
+    return sortedPersons;
+}
+
+vector<Person> PersonService::death()
+{
+    sort(sortedPersons.begin(), sortedPersons.end(), Person::compareDeathReversed);
+    return sortedPersons;
+}
+vector<Person> PersonService::redeath()
+{
+    sort(sortedPersons.begin(), sortedPersons.end(), Person::compareDeathReversed);
+    return sortedPersons;
+}
