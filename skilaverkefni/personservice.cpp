@@ -19,11 +19,14 @@ vector<Performer> getPerformers()
     return performers;
 }
 */
-/*
-vector<Person> PersonService::alpha(vector<Person> whatever)
+
+vector<Person> PersonService::alpha()
 {
-    vector<Person> sortedPersons = vector<Person> whatever;
     sort(sortedPersons.begin(), sortedPersons.end(), Person::compareName);
     return sortedPersons;
 }
-*/
+vector<Person> PersonService::realpha()
+{
+    sort(sortedPersons.begin(), sortedPersons.end(), Person::compareNameReversed);
+    return sortedPersons;
+}

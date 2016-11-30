@@ -11,6 +11,7 @@ public:
     PersonService();
 
     //vector<Person> getPerformers(/*Todo parameters*/);
+    vector<Person> alpha();
 };
 
 #endif // PERSONRSERVICE_H
