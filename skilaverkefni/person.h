@@ -11,9 +11,13 @@ public:
     Person(string name, char gender, int birthYear, int deathYear);
 
     string getName() const;
-    int getYear() const;
     char getGender() const;
-    int getDeath() const;
+    int getbirthYear() const;
+    int getdeathYear() const;
+    void setName(string name);
+    void setGender(char gender);
+    void setBirthYear(int birthYear);
+    void setDeathYear(int deathYear);
 
     static int compareName(Person a, Person b);
     static int compareNameReversed(Person a, Person b);
@@ -32,9 +36,9 @@ public:
 
 private:
     string _name;
-    int _year;
+    int _birthYear;
     char _gender;
-    int _death;
+    int _deathYear;
 };
 
 #endif // PERSON_H
