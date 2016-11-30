@@ -1,8 +1,16 @@
-#include <QCoreApplication>
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+#include "consoleui.h"
 
-int main(int argc, char *argv[])
+using namespace std ;
+
+int main()
 {
-    QCoreApplication a(argc, argv);
+    ConsoleUI ui;
 
-    return a.exec();
+    ui.run();
+    //Þetta á að vera það eina í main
+
+    return 0;
 }
