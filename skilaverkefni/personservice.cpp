@@ -19,11 +19,47 @@ vector<Performer> getPerformers()
     return performers;
 }
 */
-/*
-vector<Person> PersonService::alpha(vector<Person> whatever)
+
+vector<Person> PersonService::alpha()
 {
-    vector<Person> sortedPersons = vector<Person> whatever;
     sort(sortedPersons.begin(), sortedPersons.end(), Person::compareName);
     return sortedPersons;
 }
-*/
+vector<Person> PersonService::realpha()
+{
+    sort(sortedPersons.begin(), sortedPersons.end(), Person::compareNameReversed);
+    return sortedPersons;
+}
+vector<Person> PersonService::year()
+{
+    sort(sortedPersons.begin(), soretdPersons.end(), Person::compareYear);
+    return sortedPersons;
+}
+vector<Person> PersonService::realyear()
+{
+    sort(sortedPersons.begin(), sortedPersons.end(), Person::compareYearReversed);
+    return sortedPersons;
+}
+vector<Person> PersonService::gender()
+{
+    sort(sortedPersons.begin(), sortedPersons.end(), Person::compareGenderReversed);
+    return sortedPersons;
+}
+vector<Person> PersonService::realgender()
+{
+    sort(sortedPersons.begin(), sortedPersons.end(), Person::compareGenderReversed);
+    return sortedPersons;
+}
+
+vector<Person> PersonService::death()
+{
+    sort(sortedPersons.begin(), sortedPersons.end(), Person::compareDeathReversed);
+    return sortedPersons;
+}
+vector<Person> PersonService::realdeath()
+{
+    sort(sortedPersons.begin(), sortedPersons.end(), Person::compareDeathReversed);
+    return sortedPersons;
+}
+
+
