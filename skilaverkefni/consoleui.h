@@ -12,6 +12,8 @@ public:
     void run();
     //void sortIt();
 
+    void write();
+
 private:
     PersonService _service;
 };
