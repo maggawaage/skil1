@@ -10,7 +10,7 @@ DataAccess::DataAccess()
 
 //read    vector<Person> readToFile(const vector <Person>  famusComputerphiles);
 
-vector<Person> DataAccess::readToFile(vector<Person>  famousComputerphiles)
+vector<Person> DataAccess::writeToVector(vector<Person>famousComputerphiles)
 {
 fstream inputFile;
 inputFile.open("person.txt"); // breyta nafni á skrá

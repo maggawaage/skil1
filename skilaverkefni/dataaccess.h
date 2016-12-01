@@ -10,7 +10,7 @@ public:
     DataAccess();
     void write(string name, char gender, int birthYear, int deathYear);
 
-    vector<Person> readToFile(vector<Person>  famusComputerphiles);
+    vector<Person> writeToVector(vector<Person>  famusComputerphiles);
 
 private:
     //vector<//private vector

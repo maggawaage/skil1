@@ -20,46 +20,46 @@ vector<Performer> getPerformers()
 }
 */
 
-vector<Person> PersonService::alpha(vector<Person>& personlist)
+vector<Person> PersonService::alpha(vector<Person> personlist)
 {
     sort(personlist.begin(), personlist.end(), Person::compareName);
     return personlist;
 }
-vector<Person> PersonService::reAlpha(vector<Person>& personlist)
+vector<Person> PersonService::reAlpha(vector<Person> personlist)
 {
     sort(personlist.begin(), personlist.end(), Person::compareNameReversed);
     return personlist;
 }
-vector<Person> PersonService::year(vector<Person>& personlist)
+vector<Person> PersonService::year(vector<Person> personlist)
 {
     sort(personlist.begin(), personlist.end(), Person::compareYear);
     return personlist;
 }
 
-vector<Person> PersonService::reYear(vector<Person>& personlist)
+vector<Person> PersonService::reYear(vector<Person> personlist)
 {
     sort(personlist.begin(), personlist.end(), Person::compareYearReversed);
     return personlist;
 }
-vector<Person> PersonService::gender(vector<Person>& personlist)
+vector<Person> PersonService::gender(vector<Person> personlist)
 {
     sort(personlist.begin(), personlist.end(), Person::compareGender);
     return personlist;
 }
 
-vector<Person> PersonService::reGender(vector<Person>& personlist)
+vector<Person> PersonService::reGender(vector<Person> personlist)
 {
     sort(personlist.begin(), personlist.end(), Person::compareGenderReversed);
     return personlist;
 }
 
-vector<Person> PersonService::death(vector<Person>& personlist)
+vector<Person> PersonService::death(vector<Person> personlist)
 {
     sort(personlist.begin(), personlist.end(), Person::compareDeath);
     return personlist;
 }
 
-vector<Person> PersonService::reDeath(vector<Person>& personlist)
+vector<Person> PersonService::reDeath(vector<Person> personlist)
 {
     sort(personlist.begin(), personlist.end(), Person::compareDeathReversed);
     return personlist;
