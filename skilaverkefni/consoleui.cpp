@@ -3,10 +3,6 @@
 #include "consoleui.h"
 #include "person.h"
 #include "dataaccess.h"
-<<<<<<< HEAD
-
-=======
->>>>>>> e57ccdbf4d59901be3feba07c5f9bc1fabf438a1
 
 using namespace std;
 
@@ -34,9 +30,9 @@ void ConsoleUI::run()
     cout << endl;
     cout << "Please choose from the following commands: \n";
     cout << "\t1. Add person.  \n";
-    cout << "\t2. Read Data. \n";
-    cout << "\t3. Print Data. \n";
-    cout << "\t4. Search Data. \n";
+    cout << "\t2. Print list(sort). \n";
+    cout << "\t3. Search list. \n";
+    cout << "\t4. Delete from list. \n";
     cout << "\t5. Quit. \n";
     cout << endl;
     cout << "Your choice: ";
@@ -48,33 +44,44 @@ void ConsoleUI::run()
          write();
             break;
         case 2:
-         //read();
+            sortIt();
             break;
         case 3:
-<<<<<<< HEAD
-            //sortIt();
+            //
             break;
         case 4:
             //
-=======
->>>>>>> e57ccdbf4d59901be3feba07c5f9bc1fabf438a1
+            break;
+        case 5:
+            //
             break;
         default:
             cout<<"\tInvalid entry!"<<endl;
     }
-    cout<<"\nTry again (y/n): ";
+    cout<<"\nContinue? (y/n): ";
     cin>>ch;
 
     }
     while(ch == 'y' || ch == 'Y');
 }
-<<<<<<< HEAD
-/*
+void ConsoleUI::displayVector(vector<Person> printIt)
+{
+    Person printperson;
+    for(size_t i = 0; i < printIt.size(); i++)
+    {
+        cout << i << " < i  " << printIt[i].getName() << endl;
+        cout << i << " < i  " << printIt[i].getGender() << endl;
+        cout << i << " < i  " << printIt[i].getbirthYear() << endl;
+        cout << i << " < i  " << printIt[i].getdeathYear() << endl;
+    }
+}
+
 void ConsoleUI::sortIt()
 {
-    //vector<Person> komasvo;
-    //komasvo = writeToVector(komasvo);
-    int choice;
+    DataAccess fylla;
+    vector<Person> komasvo;
+    komasvo = fylla.fillVector(komasvo);
+    int choice = 0;
     cout << "How would you like to sort?" << endl;
     cout << "\t1. By name.  \n";
     cout << "\t2. By birthyear. \n";
@@ -86,52 +93,58 @@ void ConsoleUI::sortIt()
 
     if(choice == 1)
     {
-        int choice1;
+        int choice1 = 0;
         cout << "\t1. From A-Z.  \n";
         cout << "\t2. From Z-A. \n";
+        cout << "Your choice: ";
+        cin >> choice1;
         if(choice1 == 1)
-               //_service.alpha();
-        //else
-              // _service.reAlpha();
+               _service.alpha(komasvo);
+        else
+               _service.reAlpha(komasvo);
     }
     else if(choice == 2)
     {
-        int choice2;
+        int choice2 = 0;
         cout << "\t1. From highest to lowest.  \n";
         cout << "\t2. From lowest to highest. \n";
+        cout << "Your choice: ";
+        cin >> choice2;
         if(choice2 == 1)
-               //_service.year();
-        //else
-               //_service.reYear();
+               _service.year(komasvo);
+        else
+               _service.reYear(komasvo);
     }
     else if(choice == 3)
     {
-        int choice3;
+        int choice3 = 0;
         cout << "\t1. From male to female.  \n";
         cout << "\t2. From female to male. \n";
+        cout << "Your choice: ";
+        cin >> choice3;
         if(choice3 == 1)
-              // _service.gender();
-        //else
-              // _service.reGender();
+               _service.gender(komasvo);
+        else
+               _service.reGender(komasvo);
     }
     else if(choice == 4)
     {
-        int choice3;
+        int choice4 = 0;
         cout << "\t1. From highest to lowest.  \n";
         cout << "\t2. From lowest to highest. \n";
-        if(choice3 == 1)
-               //_service.death();
-        //else
-              // _service.reDeath();
+        cout << "Your choice: ";
+        cin >> choice4;
+        if(choice4 == 1)
+               _service.death(komasvo);
+        else
+               _service.reDeath(komasvo);
     }
-
     else
     {
-        //_service.alpha();
+        _service.alpha(komasvo);
     }
-
-} */
-=======
+    displayVector(komasvo);
+}
 void ConsoleUI::write()
 {
     string name;
@@ -171,4 +184,3 @@ void ConsoleUI::write()
     DataAccess DA;
     DA.writeToFile(name, gender, birthYear, deathYear);
 }
->>>>>>> e57ccdbf4d59901be3feba07c5f9bc1fabf438a1

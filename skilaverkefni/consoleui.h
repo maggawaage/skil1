@@ -10,8 +10,8 @@ public:
     ConsoleUI();
 
     void run();
-    //void sortIt();
-
+    void displayVector(vector<Person> printIt);
+    void sortIt();
     void write();
 
 private:

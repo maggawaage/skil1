@@ -20,7 +20,7 @@ public:
     void setBirthYear(int birthYear);
     void setDeathYear(int deathYear);
 
-    static int compareName(Person a, Person b);
+    static bool compareName(Person a, Person b);
     static int compareNameReversed(Person a, Person b);
     static int compareYear(Person a, Person b);
     static int compareYearReversed(Person a, Person b);

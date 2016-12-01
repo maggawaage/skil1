@@ -43,7 +43,7 @@ void Person::setDeathYear(int deathYear)
 {
      _deathYear = deathYear;
 }
-int Person::compareName(Person a, Person b)
+bool Person::compareName(Person a, Person b)
 {
     return a._name < b._name;
 }
@@ -76,65 +76,10 @@ int Person::compareDeathReversed(Person a, Person b)
     return a._deathYear > b._deathYear;
 }
 
-vector<Person> Person::SearchName(vector <Person> list, string searchName)
-{
-    vector <Person> newList;
 
-    for (int i = 0; i < list.size(); i++)
-    {
-        if (list[i]._name.find(searchName) != std::string::npos)
-        {
-            newList.push_back(list[i]);
-        }
-    }
 
-    return newList;
-}
 
-vector<Person> Person::SearchGender(vector <Person> list, char searchGender)
-{
-    vector <Person> newList;
 
-    for (int i = 0; i < list.size(); i++)
-    {
 
-        if (list[i]._gender == searchGender)
-        {
-            newList.push_back(list[i]);
-        }
-    }
 
-    return newList;
-}
 
-vector<Person> Person::SearchBirthYear(vector<Person> list, int searchBirth)
-{
-    vector <Person> newList;
-
-    for (int i = 0; i < list.size(); i++)
-    {
-
-        if (list[i]._birthYear == searchBirth)
-        {
-            newList.push_back(list[i]);
-        }
-    }
-
-    return newList;
-}
-
-vector<Person> Person::SearchDeathYear(vector<Person> list, int searchDeath)
-{
-    vector <Person> newList;
-
-    for (int i = 0; i < list.size(); i++)
-    {
-
-        if (list[i]._deathYear == searchDeath)
-        {
-            newList.push_back(list[i]);
-        }
-    }
-
-    return newList;
-}
