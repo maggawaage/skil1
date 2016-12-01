@@ -10,7 +10,6 @@ int main()
     ConsoleUI ui;
 
     ui.run();
-    //Þetta á að vera það eina í main
 
     return 0;
 }
