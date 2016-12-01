@@ -3,10 +3,6 @@
 #include "consoleui.h"
 #include "person.h"
 #include "dataaccess.h"
-<<<<<<< HEAD
-
-=======
->>>>>>> e57ccdbf4d59901be3feba07c5f9bc1fabf438a1
 
 using namespace std;
 
@@ -51,13 +47,12 @@ void ConsoleUI::run()
                 //read();
                 break;
             case 3:
-<<<<<<< HEAD
+
                 //sortIt();
                 break;
             case 4:
                 //
-=======
->>>>>>> e57ccdbf4d59901be3feba07c5f9bc1fabf438a1
+
                 break;
             default:
                 cout<<"\tInvalid entry!"<<endl;
@@ -69,7 +64,7 @@ void ConsoleUI::run()
     } while(ch == 'y' || ch == 'Y');
 
 }
-<<<<<<< HEAD
+
 /*
 void ConsoleUI::sortIt()
 {
@@ -132,7 +127,7 @@ void ConsoleUI::sortIt()
     }
 
 } */
-=======
+
 void ConsoleUI::write()
 {
     string name;
@@ -141,35 +136,40 @@ void ConsoleUI::write()
     int deathYear;
 
     cout << "Name: ";
-         cin >> name;
+    cin >> name;
+
     cout << "If male enter m. If female enter f:  ";
-        while(!(cin>>gender) | !((gender == 'm')|(gender == 'M') | (gender == 'f') | (gender == 'F')))
-        {
-            cin.clear();
-            cin.ignore(10000,'\n');
-            cout << "Enter only m/M or f/F: ";
-        }
+    while(!(cin>>gender) | !((gender == 'm')|(gender == 'M') | (gender == 'f') | (gender == 'F')))
+    {
+        cin.clear();
+        cin.ignore(10000,'\n');
+        cout << "Enter only m/M or f/F: ";
+    }
+
     cout << "Birth year: ";
-        while(!(cin>>birthYear))
-        {
-            cin.clear();
-            cin.ignore(10000,'\n');
-            cout << "Enter only numbers: ";
-         }
+    while(!(cin>>birthYear))
+    {
+        cin.clear();
+        cin.ignore(10000,'\n');
+        cout << "Enter only numbers: ";
+     }
+
     cout << "Enter death year in numbers: ";
-        while(!(cin>>deathYear) )
-        {
-            cin.clear();
-            cin.ignore(10000,'\n');
-            cout << "Enter only numbers:  ";
-        }
+    while(!(cin>>deathYear) )
+    {
+        cin.clear();
+        cin.ignore(10000,'\n');
+        cout << "Enter only numbers:  ";
+    }
+
     while(deathYear<birthYear)
     {
-       cout << "You cannot die before you are born.\n"
-                << "Enter death year again: ";
+        cout << "You cannot die before you are born.\n"
+             << "Enter death year again: ";
        cin >> deathYear;
     }
+
     DataAccess DA;
     DA.writeToFile(name, gender, birthYear, deathYear);
 }
->>>>>>> e57ccdbf4d59901be3feba07c5f9bc1fabf438a1
+

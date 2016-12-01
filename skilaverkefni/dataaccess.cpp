@@ -9,12 +9,9 @@ DataAccess::DataAccess()
 }
 
 //read    vector<Person> readToFile(const vector <Person>  famusComputerphiles);
+//vector<Person> DataAccess::writeToVector(vector<Person>famousComputerphiles)
 
-<<<<<<< HEAD
-vector<Person> DataAccess::writeToVector(vector<Person>famousComputerphiles)
-=======
 vector<Person> DataAccess::fillVector(vector<Person>  famousComputerphiles)
->>>>>>> e57ccdbf4d59901be3feba07c5f9bc1fabf438a1
 {
     fstream inputFile;
     inputFile.open("person.txt"); // breyta nafni á skrá

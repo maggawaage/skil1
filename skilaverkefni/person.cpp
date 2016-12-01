@@ -80,7 +80,7 @@ vector<Person> Person::SearchName(vector <Person> list, string searchName)
 {
     vector <Person> newList;
 
-    for (int i = 0; i < list.size(); i++)
+    for (size_t i = 0; i < list.size(); i++)
     {
         if (list[i]._name.find(searchName) != std::string::npos)
         {
@@ -95,7 +95,7 @@ vector<Person> Person::SearchGender(vector <Person> list, char searchGender)
 {
     vector <Person> newList;
 
-    for (int i = 0; i < list.size(); i++)
+    for (size_t i = 0; i < list.size(); i++)
     {
 
         if (list[i]._gender == searchGender)
@@ -111,7 +111,7 @@ vector<Person> Person::SearchBirthYear(vector<Person> list, int searchBirth)
 {
     vector <Person> newList;
 
-    for (int i = 0; i < list.size(); i++)
+    for (size_t i = 0; i < list.size(); i++)
     {
 
         if (list[i]._birthYear == searchBirth)
@@ -127,7 +127,7 @@ vector<Person> Person::SearchDeathYear(vector<Person> list, int searchDeath)
 {
     vector <Person> newList;
 
-    for (int i = 0; i < list.size(); i++)
+    for (size_t i = 0; i < list.size(); i++)
     {
 
         if (list[i]._deathYear == searchDeath)
