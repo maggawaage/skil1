@@ -6,10 +6,6 @@ DataAccess::DataAccess()
 {
 
 }
-
-//read    vector<Person> readToFile(const vector <Person>  famusComputerphiles);
-//vector<Person> DataAccess::writeToVector(vector<Person>famousComputerphiles)
-
 vector<Person> DataAccess::fillVector(vector<Person>  famousComputerphiles)
 {
     fstream inputFile;
@@ -32,6 +28,7 @@ vector<Person> DataAccess::fillVector(vector<Person>  famousComputerphiles)
             inputFile >> deathYear;
             temp.setDeathYear(deathYear);
             famousComputerphiles.push_back(temp);
+
         }
     }
 
@@ -54,13 +51,34 @@ void DataAccess::writeToFile(string name, char gender, int birthYear, int deathY
         famousPersons << "\n";
         famousPersons.close();
     }
-
-    else {
-        //cout << "Unable to open file";
+}
+void DataAccess::writeVectorToFile(vector<Person>famousComputerphiles)
+{
+    string name;
+    char gender;
+    int birthYear;
+    int deathYear;
+    ofstream famousPersons ("person.txt");
+    if (famousPersons.is_open())
+    {
+        for(size_t i = 0; i < famousComputerphiles.size() ; i++ )
+        {
+            name = famousComputerphiles.at(i).getName();
+            famousPersons << name;
+            famousPersons << "\n";
+            gender = famousComputerphiles.at(i).getGender();
+            famousPersons << gender;
+            famousPersons << "\n";
+            birthYear = famousComputerphiles.at(i).getBirthYear();
+            famousPersons << birthYear;
+            famousPersons << "\n";
+            deathYear = famousComputerphiles.at(i).getDeathYear();
+            famousPersons << deathYear;
+            famousPersons << "\n";
+        }
+        famousPersons.close();
     }
 }
-
-
 
 
 

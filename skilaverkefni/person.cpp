@@ -19,11 +19,11 @@ char Person::getGender() const
 {
     return _gender;
 }
-int Person::getbirthYear() const
+int Person::getBirthYear() const
 {
     return _birthYear;
 }
-int Person::getdeathYear() const
+int Person::getDeathYear() const
 {
     return _deathYear;
 }

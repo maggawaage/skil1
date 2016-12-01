@@ -3,22 +3,12 @@
 #include <vector>
 #include <string>
 #include "person.h"
-
 class DataAccess
 {
 public:
     DataAccess();
-
-
-
-    vector<Person> writeToVector(vector<Person>  famusComputerphiles);
-
     void writeToFile(string name, char gender, int birthYear, int deathYear);
-
-    vector<Person> fillVector(vector<Person>  famousComputerphiles);
-
+    void writeVectorToFile(vector<Person>famousComputerphiles);
+    vector<Person> fillVector(vector<Person>famousComputerphiles);
 };
-
-
 #endif // DATAACCESS_H
-
