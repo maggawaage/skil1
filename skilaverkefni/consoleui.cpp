@@ -27,7 +27,6 @@ void ConsoleUI::run()
 
     do
     {
-<<<<<<< HEAD
     cout << endl;
     cout << "Please choose from the following commands: \n";
     cout << "\t1. Add person.  \n";
@@ -61,46 +60,11 @@ void ConsoleUI::run()
     }
     cout<<"\nContinue? (y/n): ";
     cin>>ch;
-=======
-        cout << endl;
-        cout << "Please choose from the following commands: \n";
-        cout << "\t1. Add person.  \n";
-        cout << "\t2. Read Data. \n";
-        cout << "\t3. Print Data. \n";
-        cout << "\t4. Search Data. \n";
-        cout << "\t5. Quit. \n";
-        cout << endl;
-        cout << "Your choice: ";
-        cin >> choice;
-
-        switch(choice)
-        {
-            case 1:
-                write();
-                break;
-            case 2:
-                //read();
-                break;
-            case 3:
-
-                //sortIt();
-                break;
-            case 4:
-                //
-
-                break;
-            default:
-                cout<<"\tInvalid entry!"<<endl;
-        }
-
-        cout<<"\nTry again (y/n): ";
-        cin>>ch;
 
     } while(ch == 'y' || ch == 'Y');
->>>>>>> 1be60b5b3ee58995f2102395424777d310e27aa1
 
 }
-<<<<<<< HEAD
+
 void ConsoleUI::displayVector(vector<Person> printIt)
 {
     Person printperson;
@@ -113,10 +77,6 @@ void ConsoleUI::displayVector(vector<Person> printIt)
     }
 }
 
-=======
-
-/*
->>>>>>> 1be60b5b3ee58995f2102395424777d310e27aa1
 void ConsoleUI::sortIt()
 {
     DataAccess fylla;
@@ -184,14 +144,10 @@ void ConsoleUI::sortIt()
     {
         _service.alpha(komasvo);
     }
-<<<<<<< HEAD
+
     displayVector(komasvo);
 }
-=======
 
-} */
-
->>>>>>> 1be60b5b3ee58995f2102395424777d310e27aa1
 void ConsoleUI::write()
 {
     string name;
@@ -236,7 +192,4 @@ void ConsoleUI::write()
     DataAccess DA;
     DA.writeToFile(name, gender, birthYear, deathYear);
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 1be60b5b3ee58995f2102395424777d310e27aa1

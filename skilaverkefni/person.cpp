@@ -47,89 +47,33 @@ bool Person::compareName(Person a, Person b)
 {
     return a._name < b._name;
 }
-/*int Person::compareNameReversed(Person a, Person b)
+int Person::compareNameReversed(Person a, Person b)
 {
     return a._name > b._name;
-}*/
+}
 int Person::compareYear(Person a, Person b)
 {
     return a._birthYear < b._birthYear;
 }
-/*int Person::compareYearReversed(Person a, Person b)
+int Person::compareYearReversed(Person a, Person b)
 {
     return a._birthYear > b._birthYear;
-}*/
+}
 char Person::compareGender(Person a, Person b)
 {
     return a._gender < b._gender;
 }
-/*char Person::compareGenderReversed(Person a, Person b)
+char Person::compareGenderReversed(Person a, Person b)
 {
     return a._gender > b._gender;
-}*/
+}
 int Person::compareDeath(Person a, Person b)
 {
     return a._deathYear < b._deathYear;
 }
-/*int Person::compareDeathReversed(Person a, Person b)
+int Person::compareDeathReversed(Person a, Person b)
 {
     return a._deathYear > b._deathYear;
-}*/
-
-<<<<<<< HEAD
-
-=======
-vector<Person> Person::SearchName(vector <Person> list, string searchName)
-{
-    vector <Person> newList;
-
-    for (size_t i = 0; i < list.size(); i++)
-    {
-        if (list[i]._name.find(searchName) != std::string::npos)
-        {
-            newList.push_back(list[i]);
-        }
-    }
-
-    return newList;
 }
 
-vector<Person> Person::SearchGender(vector <Person> list, char searchGender)
-{
-    vector <Person> newList;
 
-    for (size_t i = 0; i < list.size(); i++)
-    {
->>>>>>> 1be60b5b3ee58995f2102395424777d310e27aa1
-
-
-
-
-<<<<<<< HEAD
-=======
-    for (size_t i = 0; i < list.size(); i++)
-    {
->>>>>>> 1be60b5b3ee58995f2102395424777d310e27aa1
-
-
-<<<<<<< HEAD
-=======
-    return newList;
-}
-
-vector<Person> Person::SearchDeathYear(vector<Person> list, int searchDeath)
-{
-    vector <Person> newList;
-
-    for (size_t i = 0; i < list.size(); i++)
-    {
-
-        if (list[i]._deathYear == searchDeath)
-        {
-            newList.push_back(list[i]);
-        }
-    }
-
-    return newList;
-}
->>>>>>> 1be60b5b3ee58995f2102395424777d310e27aa1

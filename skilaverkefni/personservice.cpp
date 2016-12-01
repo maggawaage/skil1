@@ -63,7 +63,8 @@ vector<Person> PersonService::reDeath(vector<Person>& personlist)
     sort(personlist.begin(), personlist.end(), Person::compareDeathReversed);
     return personlist;
 }
-vector<Person> Person::SearchName(vector <Person> list, string searchName)
+/*
+vector<Person> PersonService::SearchName(vector <Person> list, string searchName)
 {
     vector <Person> newList;
 
@@ -77,7 +78,7 @@ vector<Person> Person::SearchName(vector <Person> list, string searchName)
 
     return newList;
 }
-vector<Person> Person::SearchGender(vector <Person> list, char searchGender)
+vector<Person> PersonService::SearchGender(vector <Person> list, char searchGender)
 {
     vector <Person> newList;
 
@@ -92,7 +93,7 @@ vector<Person> Person::SearchGender(vector <Person> list, char searchGender)
 
     return newList;
 }
-vector<Person> Person::SearchBirthYear(vector<Person> list, int searchBirth)
+vector<Person> PersonService::SearchBirthYear(vector<Person> list, int searchBirth)
 {
     vector <Person> newList;
 
@@ -107,7 +108,7 @@ vector<Person> Person::SearchBirthYear(vector<Person> list, int searchBirth)
 
     return newList;
 }
-vector<Person> Person::SearchDeathYear(vector<Person> list, int searchDeath)
+vector<Person> PersonService::SearchDeathYear(vector<Person> list, int searchDeath)
 {
     vector <Person> newList;
 
@@ -122,3 +123,4 @@ vector<Person> Person::SearchDeathYear(vector<Person> list, int searchDeath)
 
     return newList;
 }
+*/
