@@ -47,34 +47,34 @@ int Person::compareName(Person a, Person b)
 {
     return a._name < b._name;
 }
-int Person::compareNameReversed(Person a, Person b)
+/*int Person::compareNameReversed(Person a, Person b)
 {
     return a._name > b._name;
-}
+}*/
 int Person::compareYear(Person a, Person b)
 {
     return a._birthYear < b._birthYear;
 }
-int Person::compareYearReversed(Person a, Person b)
+/*int Person::compareYearReversed(Person a, Person b)
 {
     return a._birthYear > b._birthYear;
-}
+}*/
 char Person::compareGender(Person a, Person b)
 {
     return a._gender < b._gender;
 }
-char Person::compareGenderReversed(Person a, Person b)
+/*char Person::compareGenderReversed(Person a, Person b)
 {
     return a._gender > b._gender;
-}
+}*/
 int Person::compareDeath(Person a, Person b)
 {
     return a._deathYear < b._deathYear;
 }
-int Person::compareDeathReversed(Person a, Person b)
+/*int Person::compareDeathReversed(Person a, Person b)
 {
     return a._deathYear > b._deathYear;
-}
+}*/
 
 vector<Person> Person::SearchName(vector <Person> list, string searchName)
 {

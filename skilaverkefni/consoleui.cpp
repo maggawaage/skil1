@@ -31,42 +31,43 @@ void ConsoleUI::run()
 
     do
     {
-    cout << endl;
-    cout << "Please choose from the following commands: \n";
-    cout << "\t1. Add person.  \n";
-    cout << "\t2. Read Data. \n";
-    cout << "\t3. Print Data. \n";
-    cout << "\t4. Search Data. \n";
-    cout << "\t5. Quit. \n";
-    cout << endl;
-    cout << "Your choice: ";
-    cin >> choice;
+        cout << endl;
+        cout << "Please choose from the following commands: \n";
+        cout << "\t1. Add person.  \n";
+        cout << "\t2. Read Data. \n";
+        cout << "\t3. Print Data. \n";
+        cout << "\t4. Search Data. \n";
+        cout << "\t5. Quit. \n";
+        cout << endl;
+        cout << "Your choice: ";
+        cin >> choice;
 
-    switch(choice)
-    {
-        case 1:
-         write();
-            break;
-        case 2:
-         //read();
-            break;
-        case 3:
+        switch(choice)
+        {
+            case 1:
+                write();
+                break;
+            case 2:
+                //read();
+                break;
+            case 3:
 <<<<<<< HEAD
-            //sortIt();
-            break;
-        case 4:
-            //
+                //sortIt();
+                break;
+            case 4:
+                //
 =======
 >>>>>>> e57ccdbf4d59901be3feba07c5f9bc1fabf438a1
-            break;
-        default:
-            cout<<"\tInvalid entry!"<<endl;
-    }
-    cout<<"\nTry again (y/n): ";
-    cin>>ch;
+                break;
+            default:
+                cout<<"\tInvalid entry!"<<endl;
+        }
 
-    }
-    while(ch == 'y' || ch == 'Y');
+        cout<<"\nTry again (y/n): ";
+        cin>>ch;
+
+    } while(ch == 'y' || ch == 'Y');
+
 }
 <<<<<<< HEAD
 /*
