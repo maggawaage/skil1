@@ -8,9 +8,13 @@ DataAccess::DataAccess()
 }
 
 //read    vector<Person> readToFile(const vector <Person>  famusComputerphiles);
+//vector<Person> DataAccess::writeToVector(vector<Person>famousComputerphiles)
 
+<<<<<<< HEAD
 
 //vector<Person> DataAccess::writeToVector(vector<Person>famousComputerphiles)
+=======
+>>>>>>> 1be60b5b3ee58995f2102395424777d310e27aa1
 vector<Person> DataAccess::fillVector(vector<Person>  famousComputerphiles)
 {
     fstream inputFile;

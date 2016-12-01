@@ -27,6 +27,7 @@ void ConsoleUI::run()
 
     do
     {
+<<<<<<< HEAD
     cout << endl;
     cout << "Please choose from the following commands: \n";
     cout << "\t1. Add person.  \n";
@@ -60,10 +61,46 @@ void ConsoleUI::run()
     }
     cout<<"\nContinue? (y/n): ";
     cin>>ch;
+=======
+        cout << endl;
+        cout << "Please choose from the following commands: \n";
+        cout << "\t1. Add person.  \n";
+        cout << "\t2. Read Data. \n";
+        cout << "\t3. Print Data. \n";
+        cout << "\t4. Search Data. \n";
+        cout << "\t5. Quit. \n";
+        cout << endl;
+        cout << "Your choice: ";
+        cin >> choice;
 
-    }
-    while(ch == 'y' || ch == 'Y');
+        switch(choice)
+        {
+            case 1:
+                write();
+                break;
+            case 2:
+                //read();
+                break;
+            case 3:
+
+                //sortIt();
+                break;
+            case 4:
+                //
+
+                break;
+            default:
+                cout<<"\tInvalid entry!"<<endl;
+        }
+
+        cout<<"\nTry again (y/n): ";
+        cin>>ch;
+
+    } while(ch == 'y' || ch == 'Y');
+>>>>>>> 1be60b5b3ee58995f2102395424777d310e27aa1
+
 }
+<<<<<<< HEAD
 void ConsoleUI::displayVector(vector<Person> printIt)
 {
     Person printperson;
@@ -76,6 +113,10 @@ void ConsoleUI::displayVector(vector<Person> printIt)
     }
 }
 
+=======
+
+/*
+>>>>>>> 1be60b5b3ee58995f2102395424777d310e27aa1
 void ConsoleUI::sortIt()
 {
     DataAccess fylla;
@@ -143,8 +184,14 @@ void ConsoleUI::sortIt()
     {
         _service.alpha(komasvo);
     }
+<<<<<<< HEAD
     displayVector(komasvo);
 }
+=======
+
+} */
+
+>>>>>>> 1be60b5b3ee58995f2102395424777d310e27aa1
 void ConsoleUI::write()
 {
     string name;
@@ -153,34 +200,43 @@ void ConsoleUI::write()
     int deathYear;
 
     cout << "Name: ";
-         cin >> name;
+    cin >> name;
+
     cout << "If male enter m. If female enter f:  ";
-        while(!(cin>>gender) | !((gender == 'm')|(gender == 'M') | (gender == 'f') | (gender == 'F')))
-        {
-            cin.clear();
-            cin.ignore(10000,'\n');
-            cout << "Enter only m/M or f/F: ";
-        }
+    while(!(cin>>gender) | !((gender == 'm')|(gender == 'M') | (gender == 'f') | (gender == 'F')))
+    {
+        cin.clear();
+        cin.ignore(10000,'\n');
+        cout << "Enter only m/M or f/F: ";
+    }
+
     cout << "Birth year: ";
-        while(!(cin>>birthYear))
-        {
-            cin.clear();
-            cin.ignore(10000,'\n');
-            cout << "Enter only numbers: ";
-         }
+    while(!(cin>>birthYear))
+    {
+        cin.clear();
+        cin.ignore(10000,'\n');
+        cout << "Enter only numbers: ";
+     }
+
     cout << "Enter death year in numbers: ";
-        while(!(cin>>deathYear) )
-        {
-            cin.clear();
-            cin.ignore(10000,'\n');
-            cout << "Enter only numbers:  ";
-        }
+    while(!(cin>>deathYear) )
+    {
+        cin.clear();
+        cin.ignore(10000,'\n');
+        cout << "Enter only numbers:  ";
+    }
+
     while(deathYear<birthYear)
     {
-       cout << "You cannot die before you are born.\n"
-                << "Enter death year again: ";
+        cout << "You cannot die before you are born.\n"
+             << "Enter death year again: ";
        cin >> deathYear;
     }
+
     DataAccess DA;
     DA.writeToFile(name, gender, birthYear, deathYear);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1be60b5b3ee58995f2102395424777d310e27aa1
