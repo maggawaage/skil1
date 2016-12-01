@@ -2,6 +2,7 @@
 #include <string>
 #include "consoleui.h"
 #include "person.h"
+#include "dataaccess.h"
 
 using namespace std;
 
@@ -11,32 +12,18 @@ ConsoleUI::ConsoleUI()
 }
 void ConsoleUI::run()
 {
-    //fall sem les úr vektor og skrifar út
-    /*
-    //string commmand;
-    //cin >> command;
-    while(true){
-
-    cout << "Please enter one of the following commands: " << endl;
-    cout << "list - This will list all performers in the system" << endl;
-    cout << "add - This will add a new performer" << endl;
-    cout << "sort - This will sort the list" << endl;
-    //if(command == "list")
-    {
-       vector<Performer> performers = _service.getPerformers();
-       for(size_t i = 0; i < performers.size(); ++i)
-       {
-           cout << performers[i].getName(); //floknara hja okkur
-       }
-    }
-    //else if(command == "add")
-    {
-        //TODO
-    }
-    */
-   // }
     int choice;
     char ch;
+
+    //adds team logo
+   cout <<  "made by:\n"
+    <<"--------------------------------------------------\n"
+    <<"|  _____ _____    _    __  __   _____    ____    |\n"
+    <<"| |_   _|____ |  / \\  |  \\/  | |  ___|	||\"\"||	 |\n"
+    <<"|   | |   |_  | / _ \\ | |\\/| |  \\ \\     ||__||   |\n"
+    <<"|   | |  ___| |/ ___ \\| |  | |   \\ \\    [ -=.]`) |\n"
+    <<"|   |_| |_____/_/   \\_|_|  |_|    \\_\\   ====== 0 |\n"
+    <<"|________________________________________________|\n";
 
     do
     {
@@ -53,13 +40,12 @@ void ConsoleUI::run()
     switch(choice)
     {
         case 1:
-        // write();
+         write();
             break;
         case 2:
-            //read();
+         //read();
             break;
         case 3:
-
             break;
         default:
             cout<<"\tInvalid entry!"<<endl;
@@ -69,4 +55,43 @@ void ConsoleUI::run()
 
     }
     while(ch == 'y' || ch == 'Y');
+}
+void ConsoleUI::write()
+{
+    string name;
+    char gender;
+    int birthYear;
+    int deathYear;
+
+    cout << "Name: ";
+         cin >> name;
+    cout << "If male enter m. If female enter f:  ";
+        while(!(cin>>gender) | !((gender == 'm')|(gender == 'M') | (gender == 'f') | (gender == 'F')))
+        {
+            cin.clear();
+            cin.ignore(10000,'\n');
+            cout << "Enter only m/M or f/F: ";
+        }
+    cout << "Birth year: ";
+        while(!(cin>>birthYear))
+        {
+            cin.clear();
+            cin.ignore(10000,'\n');
+            cout << "Enter only numbers: ";
+         }
+    cout << "Enter death year in numbers: ";
+        while(!(cin>>deathYear) )
+        {
+            cin.clear();
+            cin.ignore(10000,'\n');
+            cout << "Enter only numbers:  ";
+        }
+    while(deathYear<birthYear)
+    {
+       cout << "You cannot die before you are born.\n"
+                << "Enter death year again: ";
+       cin >> deathYear;
+    }
+    DataAccess DA;
+    DA.writeToFile(name, gender, birthYear, deathYear);
 }

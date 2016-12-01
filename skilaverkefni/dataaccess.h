@@ -8,9 +8,10 @@ class DataAccess
 {
 public:
     DataAccess();
-    void write(string name, char gender, int birthYear, int deathYear);
 
-    vector<Person> readToFile(vector<Person>  famusComputerphiles);
+    void writeToFile(string name, char gender, int birthYear, int deathYear);
+
+    vector<Person> fillVector(vector<Person>  famusComputerphiles);
 
 private:
     //vector<//private vector

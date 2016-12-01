@@ -9,6 +9,8 @@ public:
 
     void run();
 
+    void write();
+
 private:
     PersonService _service;
 };

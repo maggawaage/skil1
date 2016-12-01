@@ -10,7 +10,7 @@ DataAccess::DataAccess()
 
 //read    vector<Person> readToFile(const vector <Person>  famusComputerphiles);
 
-vector<Person> DataAccess::readToFile(vector<Person>  famousComputerphiles)
+vector<Person> DataAccess::fillVector(vector<Person>  famousComputerphiles)
 {
 fstream inputFile;
 inputFile.open("person.txt"); // breyta nafni á skrá
@@ -38,9 +38,7 @@ inputFile.close();
 return famousComputerphiles;
 }
 
-
-//write
-void DataAccess::write(string name, char gender, int birthYear, int deathYear)
+void DataAccess::writeToFile(string name, char gender, int birthYear, int deathYear)
 {
     ofstream famousPersons ("person.txt", ios_base::app); // breyta nafin á skrá , ios_base::app
     if (famousPersons.is_open())
@@ -58,7 +56,6 @@ void DataAccess::write(string name, char gender, int birthYear, int deathYear)
     else cout << "Unable to open file";
 
 }
-
 
 
 
