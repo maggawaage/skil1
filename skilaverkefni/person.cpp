@@ -29,19 +29,19 @@ int Person::getdeathYear() const
 }
 void Person::setName(string name)
 {
-    _name=name;
+    _name = name;
 }
 void Person::setGender(char gender)
 {
-    _gender=gender;
+    _gender = gender;
 }
 void Person::setBirthYear(int birthYear)
 {
-    _birthYear=birthYear;
+    _birthYear = birthYear;
 }
 void Person::setDeathYear(int deathYear)
 {
-     _deathYear=deathYear;
+     _deathYear = deathYear;
 }
 int Person::compareName(Person a, Person b)
 {
@@ -82,7 +82,6 @@ vector<Person> Person::SearchName(vector <Person> list, string searchName)
 
     for (int i = 0; i < list.size(); i++)
     {
-
         if (list[i]._name.find(searchName) != std::string::npos)
         {
             newList.push_back(list[i]);
