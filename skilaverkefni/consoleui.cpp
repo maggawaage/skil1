@@ -147,11 +147,11 @@ void ConsoleUI::sortIt()
         case 2:
             _service.reAlpha(Persons);
             break;
-        default: // if 1 or somthing other
+        default: // if 1 or something other
             _service.alpha(Persons);
         }
         break;
-    case 2: //sorts by whitch gender first and alphabetically
+    case 2: //sorts by witch gender first and alphabetically
         cout << "\t1. First female  \n";
         cout << "\t2. First male \n";
         cout << "Your choice: ";
@@ -163,7 +163,7 @@ void ConsoleUI::sortIt()
             _service.alpha(Persons);
             _service.reGender(Persons);
             break;
-        default: // if 1 or somthing other
+        default: // if 1 or something other
             _service.alpha(Persons);
             _service.gender(Persons);
         }
@@ -180,7 +180,7 @@ void ConsoleUI::sortIt()
             _service.alpha(Persons);
             _service.year(Persons);
             break;
-        default: // if 1 or somthing other
+        default: // if 1 or something other
             _service.alpha(Persons);
             _service.reYear(Persons);
             break;
@@ -198,7 +198,7 @@ void ConsoleUI::sortIt()
             _service.alpha(Persons);
             _service.death(Persons);
             break;
-        default: // if 1 or somthing other
+        default: // if 1 or something other
             _service.alpha(Persons);
             _service.reDeath(Persons);
         }
@@ -434,6 +434,7 @@ void ConsoleUI::edit()
     }
 
     }
+    _service.serviceToFile(Persons);
     displayVector(Persons);
 }
 
