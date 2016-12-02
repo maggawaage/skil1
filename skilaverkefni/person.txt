@@ -1,28 +1,44 @@
-* Donald Knuth
+* Alan Turing
 m
 1912
 1954
-* Alan Turing
-f
-1936
+* Donald Knuth
+m
+1938
 0
-* Margaret Hamilton
-f
-1791
-1871
-* Charles Babbage
-f
+* Grace Hopper
+m
+1906
+1992
+* Ada Lovelace
+m
 1815
 1852
-* Lovelace
+* Ken Thompson
 m
-1623
-1662
-* Blaise Pascal
-m
-1910
-1995
-* Konrad Zuse
-f
-1957
+1943
 0
+* Tim Berners-Lee
+m
+1955
+0
+* Edsger W. Dijkstra
+m
+1930
+2002
+* Anita Borg
+f
+1949
+2003
+* Steve Wozniak
+m
+1950
+0
+* John von Neumann
+m
+1903
+1957
+* Dennis Ritchie
+m
+1941
+2011

@@ -71,6 +71,8 @@ void ConsoleUI::write()
     char gender;
     int birthYear;
     int deathYear;
+
+    //getting valid name,gender,birthYear and deathYear
     cout << "Name(English characters only): ";
     cin.ignore(10000,'\n');
     getline(cin, name);
@@ -81,6 +83,7 @@ void ConsoleUI::write()
         cin.ignore(10000,'\n');
         cout << "Enter only m/M for male or f/F for femaler: ";
     }
+
     cout << "Birth year: ";
     while(!(cin>>birthYear))
     {
@@ -102,12 +105,11 @@ void ConsoleUI::write()
         cin >> deathYear;
     }
 
-    //check if name is already in file
+    //check if name is already in file if not move to file
     vector<Person> Persons;
     Persons = _service.serviceToVector(Persons);
     Person PER;
     PersonService PS;
-    cout << "\nperson: "<< Persons.at(0).getName() << endl;;
     if(PER.checkIfSame(Persons, name))
     {
         PS.serviceToFile(name, gender, birthYear, deathYear);
@@ -131,9 +133,10 @@ void ConsoleUI::sortIt()
     cout << endl;
     cout << "Your choice: ";
     cin >> choice;
+
     switch(choice)
     {
-    case 1:
+    case 1: //sorts alphabetically
         cout << "\t1. From A-Z  \n";
         cout << "\t2. From Z-A \n";
         cout << "Your choice: ";
@@ -144,11 +147,11 @@ void ConsoleUI::sortIt()
         case 2:
             _service.reAlpha(Persons);
             break;
-        default:
+        default: // if 1 or somthing other
             _service.alpha(Persons);
         }
         break;
-    case 2:
+    case 2: //sorts by whitch gender first and alphabetically
         cout << "\t1. First female  \n";
         cout << "\t2. First male \n";
         cout << "Your choice: ";
@@ -160,7 +163,7 @@ void ConsoleUI::sortIt()
             _service.alpha(Persons);
             _service.reGender(Persons);
             break;
-        default:
+        default: // if 1 or somthing other
             _service.alpha(Persons);
             _service.gender(Persons);
         }
@@ -177,7 +180,7 @@ void ConsoleUI::sortIt()
             _service.alpha(Persons);
             _service.year(Persons);
             break;
-        default:
+        default: // if 1 or somthing other
             _service.alpha(Persons);
             _service.reYear(Persons);
             break;
@@ -195,7 +198,7 @@ void ConsoleUI::sortIt()
             _service.alpha(Persons);
             _service.death(Persons);
             break;
-        default:
+        default: // if 1 or somthing other
             _service.alpha(Persons);
             _service.reDeath(Persons);
         }
@@ -214,12 +217,12 @@ void ConsoleUI::search()
 
     while (keepSearching == 'y')
     {
-        SearchPersons= Fill.fillVector(SearchPersons); // SearchPersons
+        SearchPersons= Fill.fillVector(SearchPersons);
 
         char moreConditions = 'y';
 
-        bool conditionAvailable[] = {0,0,0,0,0}; // Geymir hvort búið er að setja skilyrði fyrir flokk.
-        string searchString[5]; // Geymir leitarmöguleikana sem
+        bool conditionAvailable[] = {0,0,0,0,0}; // Stores types of search you are using.
+        string searchString[5]; // Stores types of search
         searchString[0] = "\t 1. Name \n";
         searchString[1] = "\t 2. Gender \n";
         searchString[2] = "\t 3. Year of birth \n";
@@ -243,7 +246,7 @@ void ConsoleUI::search()
                 cin.ignore(10000,'\n');
                 cout << "Enter corresponding number from 1-5: ";
             }
-
+            //search by name
             if ((conditionNum == 1) & (conditionAvailable[0] == 0))
             {
                 string nameForSearch;
@@ -252,7 +255,7 @@ void ConsoleUI::search()
                 cin.ignore(10000,'\n');
                 SearchPersons = PA.SearchName(SearchPersons, nameForSearch);
             }
-
+            //search by gender
             else if ((conditionNum == 2) & (conditionAvailable[1] == 0) )
             {
                 char genderForSearch;
@@ -265,7 +268,7 @@ void ConsoleUI::search()
                 }
                 SearchPersons = PA.SearchGender(SearchPersons, genderForSearch);
             }
-
+            //search by birth year
             else if ((conditionNum == 3) & (conditionAvailable[2] == 0))
             {
                 int birthYearForSearch;
@@ -278,6 +281,7 @@ void ConsoleUI::search()
                 }
                 SearchPersons = PA.SearchBirthYear(SearchPersons, birthYearForSearch);
             }
+            //search by death year
             else if ((conditionNum == 4) & (conditionAvailable[3] == 0))
             {
                 int deathYearForSearch;
@@ -290,6 +294,7 @@ void ConsoleUI::search()
                 }
                 SearchPersons = PA.SearchDeathYear(SearchPersons, deathYearForSearch);
             }
+            //search by alive
             else if ((conditionNum == 5) & (conditionAvailable[3] == 0))
             {
                 SearchPersons = PA.SearchDeathYear(SearchPersons, 0);
@@ -297,6 +302,7 @@ void ConsoleUI::search()
 
             conditionAvailable[conditionNum-1] = 1;
 
+            //add type of search
             cout << "Do you want to add another condition (y/n)? ";
             while(!(cin>>moreConditions) | (!((moreConditions== 'y')|(moreConditions == 'Y') | (moreConditions == 'n') | (moreConditions == 'N'))))
             {
@@ -334,46 +340,45 @@ void ConsoleUI::search()
 
 void ConsoleUI::deleteFromFile()
 {
-    vector<Person> persons;
-    persons = _service.serviceToVector(persons);
+    vector<Person> Persons;
+    Persons = _service.serviceToVector(Persons);
     string name;
-    displayVector(persons);
+    displayVector(Persons);
+
     cout << "\nWhat person do you want to remove from the list? ";
     cin.ignore(10000,'\n');
     getline(cin, name);
-    for(size_t i = 0; i < persons.size(); i++)
+    for(size_t i = 0; i < Persons.size(); i++)
     {
-        if(persons[i].getName() == name)
+        if(Persons[i].getName() == name)
         {
-            persons.erase(persons.begin()+i);
+            Persons.erase(Persons.begin()+i);
         }
     }
-    _service.serviceToFile(persons);
-    displayVector(persons);
+    _service.serviceToFile(Persons);
+    displayVector(Persons);
 }
 
 void ConsoleUI::edit()
 {
     string newName;
     int newYear;
-    vector<Person> persons;
-    persons = _service.serviceToVector(persons);
-    string name;
-    displayVector(persons);
+    vector<Person> Persons;
+    Persons = _service.serviceToVector(Persons);
+    int id;
+    int i = 1;
+    //couts vector with ID
+    displayVector( Persons, i );
 
     char female = 'f';
     char male = 'm';
 
-    cout << "\nEnter the name of the person you want to edit? ";
-    cin.ignore(10000,'\n');
-    getline(cin, name);
-    size_t count;
-    for(size_t i = 0; i < persons.size(); i++)
+    cout << "\nEnter the ID of the person you want to edit? ";
+    while(!(cin >> id))
     {
-        if(persons[i].getName() == name)
-        {
-            count = i;
-        }
+        cin.clear();
+        cin.ignore(10000,'\n');
+        cout << "Enter only numbers from 1-" << Persons.size() << ": ";
     }
     cout << "What do you want to edit?\n "
          <<"\t 1. Name \n"
@@ -381,24 +386,26 @@ void ConsoleUI::edit()
        <<"\t 3. Year of birth \n"
       <<"\t 4. Year of death  \n";
 
+    //what to change
     cout << "Your choice: ";
     int editChoice;
     cin >> editChoice;
     switch(editChoice)
     {
     case 1:
-        cout << "Enter new name";
+        cout << "Enter new name: ";
+        cin.ignore(10000,'\n');
         getline(cin, newName);
-        persons.at(count).setName(newName);
+        Persons.at(id-1).setName(newName);
         break;
     case 2:
-        if((persons.at(count).getGender())==male)
+        if((Persons.at(id-1).getGender())==male)
         {
-            persons.at(count).setGender(female);
+            Persons.at(id-1).setGender(female);
         }
         else
         {
-            persons.at(count).setGender(male);
+            Persons.at(id-1).setGender(male);
         }
         break;
     case 3:
@@ -409,7 +416,7 @@ void ConsoleUI::edit()
             cin.ignore(10000,'\n');
             cout << "Enter year only in numbers(YYYY): ";
         }
-        persons.at(count).setBirthYear(newYear);
+        Persons.at(id-1).setBirthYear(newYear);
         break;
     case 4:
         cout << "Enter new year: ";
@@ -419,7 +426,7 @@ void ConsoleUI::edit()
             cin.ignore(10000,'\n');
             cout << "Enter year only in numbers(YYYY): ";
         }
-        persons.at(count).setDeathYear(newYear);
+        Persons.at(id-1).setDeathYear(newYear);
         break;
     default:
     {
@@ -427,12 +434,18 @@ void ConsoleUI::edit()
     }
 
     }
-    displayVector(persons);
+    displayVector(Persons);
 }
 
-void ConsoleUI::displayVector(vector<Person> printIt)
+void ConsoleUI::displayVector( vector<Person> printIt, int x )
 {
-    cout << "\nName"<< "\t\t\t" << "Gender" << "\t" << "Birth year";
+    cout << "\n";
+    //couts ID if you want
+    if (x == 1)
+    {
+        cout << "ID" << "\t";
+    }
+    cout << "Name"<< "\t\t\t" << "Gender" << "\t" << "Birth year";
     cout.width(15);
     cout <<"Year of death";
     cout.width(15);
@@ -441,7 +454,13 @@ void ConsoleUI::displayVector(vector<Person> printIt)
 
     for(size_t i = 0; i < printIt.size(); i++)
     {
+        //couts ID number if you want
         cout.setf(ios::left);
+        if (x == 1)
+        {
+            cout.width(8);
+            cout << i+1;
+        }
         cout.width(24);
         cout << printIt[i].getName();
         if(printIt[i].getGender()=='m')
@@ -473,6 +492,7 @@ void ConsoleUI::displayVector(vector<Person> printIt)
 
 void ConsoleUI::teamLogo()
 {
+    //add team logo
     cout <<  "made by:\n"
           <<"--------------------------------------------------\n"
          <<"|  _____ _____    _    __  __   _____    ____    |\n"

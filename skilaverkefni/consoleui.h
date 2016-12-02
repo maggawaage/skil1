@@ -15,7 +15,7 @@ public:
     void search();
     void deleteFromFile();
     void edit();
-    void displayVector(vector<Person> printIt);
+    void displayVector(vector<Person> printIt, int x = 0);
     void teamLogo();
 private:
     PersonService _service;
