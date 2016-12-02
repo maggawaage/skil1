@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "person.h"
+#include "dataaccess.h"
 using namespace std;
 
 class PersonService
@@ -19,13 +20,20 @@ public:
     vector<Person> death(vector<Person>& personlist);
     vector<Person> reDeath(vector<Person>& personlist);
 
+    vector<Person> serviceToVector(vector<Person> person);
+    void serviceToFile(string name, char gender, int birthYear, int deathYear);
+    void serviceToFile(vector<Person> person);
+
     static vector<Person> SearchName(vector<Person> list, string name);
     static vector<Person> SearchGender(vector<Person> list, char gender);
     static vector<Person> SearchBirthYear(vector<Person> list, int birthYear);
     static vector<Person> SearchDeathYear(vector<Person> list, int deathYear);
 
+    vector<Person> deleteDublicateVector(vector<Person> Persons);
+
 private:
     vector<Person> alpha();
+    DataAccess access;
 
 };
 

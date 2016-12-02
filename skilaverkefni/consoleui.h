@@ -10,10 +10,12 @@ public:
     ConsoleUI();
 
     void run();
-    void displayVector(vector<Person> printIt);
-    void sortIt();
     void write();
+    void sortIt();
     void search();
+    void deleteFromFile();
+    void edit();
+    void displayVector(vector<Person> printIt);
     void teamLogo();
 private:
     PersonService _service;

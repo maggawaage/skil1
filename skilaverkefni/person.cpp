@@ -47,33 +47,51 @@ bool Person::compareName(Person a, Person b)
 {
     return a._name < b._name;
 }
-int Person::compareNameReversed(Person a, Person b)
+bool Person::compareNameReversed(Person a, Person b)
 {
     return a._name > b._name;
 }
-int Person::compareYear(Person a, Person b)
+bool Person::compareYear(Person a, Person b)
 {
     return a._birthYear < b._birthYear;
 }
-int Person::compareYearReversed(Person a, Person b)
+bool Person::compareYearReversed(Person a, Person b)
 {
     return a._birthYear > b._birthYear;
 }
-char Person::compareGender(Person a, Person b)
+bool Person::compareGender(Person a, Person b)
 {
     return a._gender < b._gender;
 }
-char Person::compareGenderReversed(Person a, Person b)
+bool Person::compareGenderReversed(Person a, Person b)
 {
     return a._gender > b._gender;
 }
-int Person::compareDeath(Person a, Person b)
+bool Person::compareDeath(Person a, Person b)
 {
     return a._deathYear < b._deathYear;
 }
-int Person::compareDeathReversed(Person a, Person b)
+bool Person::compareDeathReversed(Person a, Person b)
 {
     return a._deathYear > b._deathYear;
 }
-
+bool Person::checkIfSame(vector<Person> Persons, string name)
+{
+    int check = 0;
+    for (size_t i = 0; i < Persons.size() ; i++)
+    {
+        if (Persons.at(i).getName() == name)
+        {
+            check = 1;
+        }
+    }
+    if (check == 1)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
 

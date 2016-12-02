@@ -1,11 +1,11 @@
 #include <fstream>
-#include <iostream> //eyða
 #include "dataaccess.h"
 
 DataAccess::DataAccess()
 {
 
 }
+
 vector<Person> DataAccess::fillVector(vector<Person>famousComputerphiles)
 {
     fstream inputFile("person.txt");
@@ -13,13 +13,15 @@ vector<Person> DataAccess::fillVector(vector<Person>famousComputerphiles)
     char gender;
     int birthYear;
     int deathYear;
+    string trash;
 
     if (inputFile.is_open())
     {
-        while(inputFile >> name)
+        while(inputFile >> trash)
         {
             Person temp;
             getline(inputFile, name);
+            name=name.substr(1);
             temp.setName(name);
             inputFile >> gender;
             temp.setGender(gender);
@@ -42,7 +44,7 @@ void DataAccess::writeToFile(string name, char gender, int birthYear, int deathY
     ofstream famousPersons ("person.txt", ios_base::app);
     if (famousPersons.is_open())
     {
-        famousPersons << "* " << name;
+        famousPersons << "\n* " << name;
         famousPersons << "\n";
         famousPersons <<gender;
         famousPersons << "\n";
@@ -65,6 +67,7 @@ void DataAccess::writeVectorToFile(vector<Person>famousComputerphiles)
     {
         for(size_t i = 0; i < famousComputerphiles.size() ; i++ )
         {
+            famousPersons << "* ";
             name = famousComputerphiles.at(i).getName();
             famousPersons << name;
             famousPersons << "\n";

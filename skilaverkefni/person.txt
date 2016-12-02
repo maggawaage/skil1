@@ -1,33 +1,28 @@
 * Donald Knuth
 m
-1938
-0
-* Alan Turing
-m
 1912
 1954
-* Margaret Hamilton
+* Alan Turing
 f
 1936
 0
-* Charles Babbage
-m
+* Margaret Hamilton
+f
 1791
 1871
-*Ada Lovelace
+* Charles Babbage
 f
 1815
 1852
-* Blaise Pascal
+* Lovelace
 m
 1623
 1662
-* Konrad Zuse
+* Blaise Pascal
 m
 1910
 1995
-* Sophie Wilson
+* Konrad Zuse
 f
 1957
 0
-

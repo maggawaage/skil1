@@ -1,4 +1,5 @@
 #include "personservice.h"
+#include "dataaccess.h"
 #include <algorithm>
 
 PersonService::PersonService()
@@ -110,3 +111,30 @@ vector<Person> PersonService::SearchDeathYear(vector<Person> list, int searchDea
     return newList;
 }
 
+vector<Person> PersonService::serviceToVector(vector<Person> person)
+{
+    return access.fillVector(person);
+}
+void PersonService::serviceToFile(vector<Person> person)
+{
+     access.writeVectorToFile(person);
+}
+void PersonService::serviceToFile(string name, char gender, int birthYear, int deathYear)
+{
+    access.writeToFile(name, gender, birthYear, deathYear);
+}
+
+vector<Person> PersonService::deleteDublicateVector(vector<Person> Persons)
+{
+        for ( size_t i = 0; i < Persons.size() ; i++ )
+        {
+            for ( size_t j = 0; j < Persons.size() ; j++ )
+            {
+                if(( Persons.at(i).getName() == Persons.at(j).getName() ) && (!( i == j )))
+                {
+                    Persons.erase (Persons.begin()+i);
+                }
+            }
+        }
+        return Persons;
+}
