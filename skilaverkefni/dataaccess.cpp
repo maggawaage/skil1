@@ -1,25 +1,25 @@
 #include <fstream>
+#include <iostream> //eyða
 #include "dataaccess.h"
-//#include "person.h"
 
 DataAccess::DataAccess()
 {
 
 }
-vector<Person> DataAccess::fillVector(vector<Person>  famousComputerphiles)
+vector<Person> DataAccess::fillVector(vector<Person>famousComputerphiles)
 {
-    fstream inputFile;
-    inputFile.open("person.txt"); // breyta nafni á skrá
+    fstream inputFile("person.txt");
     string name;
     char gender;
     int birthYear;
     int deathYear;
+
     if (inputFile.is_open())
     {
-        while(! inputFile.eof() )
+        while(inputFile >> name)
         {
             Person temp;
-            inputFile >>  name;
+            getline(inputFile, name);
             temp.setName(name);
             inputFile >> gender;
             temp.setGender(gender);
@@ -27,21 +27,22 @@ vector<Person> DataAccess::fillVector(vector<Person>  famousComputerphiles)
             temp.setBirthYear(birthYear);
             inputFile >> deathYear;
             temp.setDeathYear(deathYear);
-            famousComputerphiles.push_back(temp);
-
+            if(!inputFile.eof() )
+            {
+                famousComputerphiles.push_back(temp);
+            }
         }
     }
-
     inputFile.close();
     return famousComputerphiles;
 }
 
 void DataAccess::writeToFile(string name, char gender, int birthYear, int deathYear)
 {
-    ofstream famousPersons ("person.txt", ios_base::app); // breyta nafni á skrá, ios_base::app
+    ofstream famousPersons ("person.txt", ios_base::app);
     if (famousPersons.is_open())
     {
-        famousPersons <<name;
+        famousPersons << "* " << name;
         famousPersons << "\n";
         famousPersons <<gender;
         famousPersons << "\n";
@@ -52,6 +53,7 @@ void DataAccess::writeToFile(string name, char gender, int birthYear, int deathY
         famousPersons.close();
     }
 }
+
 void DataAccess::writeVectorToFile(vector<Person>famousComputerphiles)
 {
     string name;
@@ -79,20 +81,3 @@ void DataAccess::writeVectorToFile(vector<Person>famousComputerphiles)
         famousPersons.close();
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,24 +1,11 @@
 #include "personservice.h"
+#include <algorithm>
 
 PersonService::PersonService()
 {
 
 }
-/*
-vector<Performer> getPerformers()
-{
-    //vector<Performer> perfomers;
 
-    Performer p("Duran Duran", 56);
-    Performer p2("Madonna", 55);
-
-    perfomers.push_back(p);
-    perfomers.push_back(p2);
-     //odruvisi hja okkur
-    //TODO fullt stuff
-    return performers;
-}
-*/
 vector<Person> PersonService::alpha(vector<Person>& personlist)
 {
     sort(personlist.begin(), personlist.end(), Person::compareName);
@@ -29,23 +16,23 @@ vector<Person> PersonService::reAlpha(vector<Person>& personlist)
     sort(personlist.begin(), personlist.end(), Person::compareNameReversed);
     return personlist;
 }
+
 vector<Person> PersonService::year(vector<Person>& personlist)
 {
     sort(personlist.begin(), personlist.end(), Person::compareYear);
     return personlist;
 }
-
 vector<Person> PersonService::reYear(vector<Person>& personlist)
 {
     sort(personlist.begin(), personlist.end(), Person::compareYearReversed);
     return personlist;
 }
+
 vector<Person> PersonService::gender(vector<Person>& personlist)
 {
     sort(personlist.begin(), personlist.end(), Person::compareGender);
     return personlist;
 }
-
 vector<Person> PersonService::reGender(vector<Person>& personlist)
 {
     sort(personlist.begin(), personlist.end(), Person::compareGenderReversed);
@@ -57,20 +44,19 @@ vector<Person> PersonService::death(vector<Person>& personlist)
     sort(personlist.begin(), personlist.end(), Person::compareDeath);
     return personlist;
 }
-
 vector<Person> PersonService::reDeath(vector<Person>& personlist)
 {
     sort(personlist.begin(), personlist.end(), Person::compareDeathReversed);
     return personlist;
 }
-/*
+
 vector<Person> PersonService::SearchName(vector <Person> list, string searchName)
 {
     vector <Person> newList;
 
     for (int i = 0; i < list.size(); i++)
     {
-        if (list[i]._name.find(searchName) != std::string::npos)
+        if (list[i].getName().find(searchName) != string::npos)
         {
             newList.push_back(list[i]);
         }
@@ -85,7 +71,7 @@ vector<Person> PersonService::SearchGender(vector <Person> list, char searchGend
     for (int i = 0; i < list.size(); i++)
     {
 
-        if (list[i]._gender == searchGender)
+        if (list[i].getGender() == searchGender)
         {
             newList.push_back(list[i]);
         }
@@ -100,7 +86,7 @@ vector<Person> PersonService::SearchBirthYear(vector<Person> list, int searchBir
     for (int i = 0; i < list.size(); i++)
     {
 
-        if (list[i]._birthYear == searchBirth)
+        if (list[i].getBirthYear() == searchBirth)
         {
             newList.push_back(list[i]);
         }
@@ -115,7 +101,7 @@ vector<Person> PersonService::SearchDeathYear(vector<Person> list, int searchDea
     for (int i = 0; i < list.size(); i++)
     {
 
-        if (list[i]._deathYear == searchDeath)
+        if (list[i].getDeathYear() == searchDeath)
         {
             newList.push_back(list[i]);
         }
@@ -123,4 +109,4 @@ vector<Person> PersonService::SearchDeathYear(vector<Person> list, int searchDea
 
     return newList;
 }
-*/
+

@@ -13,7 +13,8 @@ public:
     void displayVector(vector<Person> printIt);
     void sortIt();
     void write();
-
+    void search();
+    void teamLogo();
 private:
     PersonService _service;
 };
