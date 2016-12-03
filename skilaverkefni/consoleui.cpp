@@ -342,19 +342,19 @@ void ConsoleUI::deleteFromFile()
 {
     vector<Person> Persons;
     Persons = _service.serviceToVector(Persons);
-    string name;
-    displayVector(Persons);
+    int id;
+    displayVector(Persons, 1);
 
-    cout << "\nWhat person do you want to remove from the list? ";
-    cin.ignore(10000,'\n');
-    getline(cin, name);
-    for(size_t i = 0; i < Persons.size(); i++)
+    cout << "\nEnter the ID of the person you want to delete?";
+    while(!(cin >> id))
     {
-        if(Persons[i].getName() == name)
-        {
-            Persons.erase(Persons.begin()+i);
-        }
+        cin.clear();
+        cin.ignore(10000,'\n');
+        cout << "Enter only numbers from 1-" << Persons.size() << ": ";
     }
+
+    Persons.erase (Persons.begin()+id-1);
+
     _service.serviceToFile(Persons);
     displayVector(Persons);
 }
@@ -366,9 +366,8 @@ void ConsoleUI::edit()
     vector<Person> Persons;
     Persons = _service.serviceToVector(Persons);
     int id;
-    int i = 1;
     //couts vector with ID
-    displayVector( Persons, i );
+    displayVector( Persons, 1 );
 
     char female = 'f';
     char male = 'm';

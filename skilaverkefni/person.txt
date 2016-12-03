@@ -1,20 +1,12 @@
-* Alan Turing
-m
-1912
-1954
-* Donald Knuth
-m
-1938
-0
 * Grace Hopper
-m
+f
 1906
 1992
 * Ada Lovelace
-m
+f
 1815
 1852
-* Ken Thompson
+* Barbie and Ken
 m
 1943
 0
@@ -30,15 +22,7 @@ m
 f
 1949
 2003
-* Steve Wozniak
-m
-1950
-0
 * John von Neumann
 m
 1903
 1957
-* Dennis Ritchie
-m
-1941
-2011
